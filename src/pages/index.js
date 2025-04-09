@@ -2,6 +2,8 @@ import * as React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery, Link } from "gatsby";
 
+
+
 // Add global styles to ensure no underlines on links and add Indian accents
 const globalStyles = `
   a {
@@ -142,71 +144,55 @@ const IndexPage = () => {
       <style>{globalStyles}</style>
 
       {/* Navbar - NY Pizza style with Indian accents */}
-      <nav className="bg-white shadow-md sticky top-0 z-50 indian-border">
+      <nav className="bg-white shadow-md sticky top-0 z-50 border-b-4 border-red-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20">
-            <div className="flex items-center">
-              <Link to="/" className="flex items-center space-x-2 no-underline">
-                <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-red-700 shadow-lg transform -rotate-6">
-                  <GatsbyImage
-                    image={logoImage}
-                    alt="Chapman Pizzeria Logo"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div>
-                  <span className="text-3xl font-bold text-red-700 font-pizza tracking-wider uppercase">
-                    Chapman
-                  </span>
-                  <br />
-                  <span className="text-xl font-bold text-green-700 font-pizza tracking-wider -mt-1 block italic">
-                    Pizzeria
-                  </span>
-                </div>
+          <div className="flex items-center justify-center md:justify-between h-20 relative">
+
+            {/* Centered logo and text on mobile, left-aligned on desktop */}
+            <Link
+              to="/"
+              className="absolute md:static left-1/2 transform -translate-x-1/2 md:translate-x-0 flex items-center space-x-2 no-underline"
+            >
+              <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-red-700 shadow-lg transform -rotate-6">
+                <GatsbyImage
+                  image={logoImage}
+                  alt="Chapman Pizzeria Logo"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="text-center md:text-left">
+                <span className="block text-2xl md:text-3xl font-bold text-red-700 font-pizza tracking-wider uppercase">
+                  Chapman
+                </span>
+                <span className="block text-lg md:text-xl font-bold text-green-700 font-pizza tracking-wider italic -mt-1">
+                  Pizzeria
+                </span>
+              </div>
+            </Link>
+
+            {/* Desktop navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <Link to="/" className="text-gray-900 hover:text-red-700 font-bold font-pizza no-underline uppercase px-3 py-2">
+                Home
               </Link>
-            </div>
-
-            {/* Mobile navigation links */}
-            <div className="flex items-center md:hidden">
-              <div className="flex flex-wrap items-center justify-end space-x-2 space-y-1">
-                <Link to="/" className="text-gray-900 hover:text-red-700 px-2 py-1 text-sm font-bold transition-colors duration-200 no-underline uppercase">
-                  Home
-                </Link>
-                <Link to="/menu" className="text-gray-900 hover:text-red-700 px-2 py-1 text-sm font-bold transition-colors duration-200 no-underline uppercase">
-                  Menu
-                </Link>
-                <Link to="/#about" className="text-gray-900 hover:text-red-700 px-2 py-1 text-sm font-bold transition-colors duration-200 no-underline uppercase">
-                  About
-                </Link>
-                <Link to="/#contact" className="text-gray-900 hover:text-red-700 px-2 py-1 text-sm font-bold transition-colors duration-200 no-underline uppercase">
-                  Contact
-                </Link>
-              </div>
-            </div>
-
-            {/* Desktop menu */}
-            <div className="hidden md:flex md:items-center">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <Link to="/" className="text-gray-900 hover:text-red-700 px-3 py-2 font-bold font-pizza transition-colors duration-200 no-underline uppercase">
-                  Home
-                </Link>
-                <Link to="/menu" className="text-gray-900 hover:text-red-700 px-3 py-2 font-bold font-pizza transition-colors duration-200 no-underline uppercase">
-                  Menu
-                </Link>
-                <Link to="/#about" className="text-gray-900 hover:text-red-700 px-3 py-2 font-bold font-pizza transition-colors duration-200 no-underline uppercase">
-                  About
-                </Link>
-                <Link to="/#location" className="text-gray-900 hover:text-red-700 px-3 py-2 font-bold font-pizza transition-colors duration-200 no-underline uppercase">
-                  Location
-                </Link>
-                <Link to="/#contact" className="text-gray-900 hover:text-red-700 px-3 py-2 font-bold font-pizza transition-colors duration-200 no-underline uppercase">
-                  Contact
-                </Link>
-              </div>
+              <Link to="/menu" className="text-gray-900 hover:text-red-700 font-bold font-pizza no-underline uppercase px-3 py-2">
+                Menu
+              </Link>
+              <Link to="/#about" className="text-gray-900 hover:text-red-700 font-bold font-pizza no-underline uppercase px-3 py-2">
+                About
+              </Link>
+              <Link to="/#location" className="text-gray-900 hover:text-red-700 font-bold font-pizza no-underline uppercase px-3 py-2">
+                Location
+              </Link>
+              <Link to="/#contact" className="text-gray-900 hover:text-red-700 font-bold font-pizza no-underline uppercase px-3 py-2">
+                Contact
+              </Link>
             </div>
           </div>
         </div>
       </nav>
+
+
 
       {/* Hero Section - NY Style Pizza with Indian influence */}
       <section className="relative overflow-hidden">
