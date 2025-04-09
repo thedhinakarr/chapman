@@ -161,13 +161,14 @@ const IndexPage = () => {
                 />
               </div>
               <div className="text-center md:text-left">
-                <span className="block text-2xl md:text-3xl font-bold text-red-700 font-pizza tracking-wider uppercase">
+                <span className="block text-lg md:text-3xl font-bold text-red-700 font-pizza tracking-wider uppercase">
                   Chapman
                 </span>
-                <span className="block text-lg md:text-xl font-bold text-green-700 font-pizza tracking-wider italic -mt-1">
+                <span className="block text-sm md:text-xl font-bold text-green-700 font-pizza tracking-wider italic -mt-1">
                   Pizzeria
                 </span>
               </div>
+
             </Link>
 
             {/* Desktop navigation */}
