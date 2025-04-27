@@ -65,63 +65,88 @@ const MenuPage = () => {
   const logoImage = getImage(data.logo);
   const menuBgImage = getImage(data.menuBg);
 
-  // Pancakes & Main Dishes from new menu
+  // Langos
   const langos = [
-    "1. Langos med ost - Tomat, lök, gurka, isbergssallad, feferoni",
-    "2. Langos med grygrisk - Tomat, lök, gurka, isbergssallad, feferoni",
-    "3. Langos med kyckling - Tomat, lök, gurka, isbergssallad, feferoni",
-    "4. Langos med kebabkött - Tomat, lök, gurka, isbergssallad, feferoni",
-    "5. Langos med räkor - Tomat, lök, gurka, isbergssallad, feferoni"
+    "1. Langos med kebab - 120 SEK - Kebabkött (nötköt), Ost, Gräddfil, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
+    "2. Langos med gyroskött - Gyroskött (fläskkarre), Ost, Gräddfil, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
+    "3. Langos med kyckling - Kyckling, Ost, Gräddfil, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
+    "4. Langos med tonfisk - Tonfisk, Ost, Gräddfil, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
+    "5. Langos med räkor - Räkor, Ost, Gräddfil, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni"
   ];
 
+  // Sallads
   const sallader = [
-    "1. Kebabsallad - Kebabkött, tomat, gurka, lök, ost, fetaost, mild sås, oliver",
-    "2. Kycklingsallad - Kyckling, tomat, gurka, lök, ost, fetaost, mild sås, oliver",
-    "3. Räkasallad - Räkor, tomat, gurka, lök, ost, fetaost, mild sås, oliver",
-    "4. Tonfisksallad - Tonfisk, tomat, gurka, lök, ost, fetaost, mild sås, oliver",
-    "5. Skinksallad - Skinka, tomat, gurka, lök, ost, fetaost, mild sås, oliver"
+    "1. Kebabsallad - 110 SEK - Kebabkött (nötköt), Fetaost, Kebabsås mild, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni, Gurka",
+    "2. Kyckingsallad - Kyckling, Fetaost, Kebabsås mild, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni, Gurka",
+    "3. Falafelsallad - Falafel, Fetaost, Kebabsås mild, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni, Gurka",
+    "4. Tonfisksallad - Tonfisk, Fetaost, Kebabsås mild, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni, Gurka",
+    "5. Räksallad - Räkor, Fetaost, Kebabsås mild, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni, Gurka",
+    "6. Hawaiisallad - Skinka, Fetaost, Ananas, Kebabsås mild, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni, Gurka",
+    "7. Vegetarisk sallad - Fetaost, Champinjoner (färska), Kebabsås mild, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni, Gurka, Paprika (färsk)",
+    "8. Gyrossallad - Gyroskött (fläskkarre), Fetaost, Kebabsås mild, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni, Gurka"
   ];
 
-  const fageFile = [
-    "1. Fågelfilégrillad special - Kyckling, pommes, isbergssallad, tomat, gurka, lök, ost",
-    "2. Fågelfilégrillad med pommes - Kyckling, pommes, isbergssallad, tomat, gurka, lök",
-    "3. Fågelfilégrillad med potatisgratäng - Kyckling, potatisgratäng, isbergssallad, tomat, gurka, lök"
+  // Falafel dishes
+  const falafel = [
+    "23. Falafel med bröd - 105 SEK - Falafel, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "24. Falafel med bröd special - 110 SEK - Falafel, Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "25. Falafelrulle - 105 SEK - Falafel, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "26. Falafelrulle special - 110 SEK - Falafel, Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "27. Falafeltallrik med pommes - 105 SEK - Falafel, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "28. Falafeltallrik special med pommes - 110 SEK - Falafel, Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni"
   ];
 
+  // Hamburgers
   const hamburgare = [
-    "1. Hamburgertallrik 90g - Bröd, hamburgare, dressing, isbergssallad, tomat, gurka, lök, pommes",
-    "2. Hamburgertallrik 150g - Bröd, hamburgare, dressing, isbergssallad, tomat, gurka, lök, pommes",
-    "3. Hamburgare 90g - Bröd, hamburgare, dressing, isbergssallad, tomat, gurka, lök",
-    "4. Hamburgare 150g - Bröd, hamburgare, dressing, isbergssallad, tomat, gurka, lök"
+    "1. Hamburgare 90g - 90 SEK - Hamburgerdressing, Tomater (färska), Isbergssallad, Rödlök",
+    "2. Hamburgertallrik 90g - 95 SEK - Pommes frites, Hamburgerdressing, Tomater (färska), Isbergssallad, Rödlök",
+    "3. Hamburgare 150g - 95 SEK - Hamburgerdressing, Tomater (färska), Isbergssallad, Rödlök",
+    "4. Hamburgertallrik 150g - 110 SEK - Pommes frites, Hamburgerdressing, Tomater (färska), Isbergssallad, Rödlök"
   ];
 
-  const talrik = [
-    "1. Fågelfilétallrik med pommes - Kyckling, pommes, isbergssallad, tomat, gurka, lök",
-    "2. Fågelfilétallrik med klyftpotatis - Kyckling, klyftpotatis, isbergssallad, tomat, gurka, lök",
-    "3. Fågelfilétallrik med ris - Kyckling, ris, isbergssallad, tomat, gurka, lök",
-    "4. Fågelfilétallrik med special - Kyckling, pommes, isbergssallad, tomat, gurka, lök, ost, bea/kebabsås",
-    "5. Kebabtallik med pommes - Kebabkött, pommes, isbergssallad, tomat, gurka, lök, feferoni, mild sås",
-    "6. Kebabtallik med ris - Kebabkött, ris, isbergssallad, tomat, gurka, lök, feferoni, mild sås",
-    "7. Gyrostallrik - Gyros (fläskfilé), pommes, isbergssallad, tomat, gurka, lök, feferoni, tzatziki"
+  // Kebab plates
+  const kebabTallrik = [
+    "1. Kebab med bröd - 110 SEK - Kebabkött (nötköt), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "2. Kebab med bröd special - 120 SEK - Kebabkött (nötköt), Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "3. Kebabrulle - 110 SEK - Kebabkött (nötköt), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "4. Kebabrulle special - 120 SEK - Kebabkött (nötköt), Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "5. Kebabtallrik med pommes - 110 SEK - Kebabkött (nötköt), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "6. Kebabtallrik special med pommes - 120 SEK - Kebabkött (nötköt), Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "7. Kebabtallrik med ris - 110 SEK - Kebabkött (nötköt), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "8. Kebabtallrik special med ris - 120 SEK - Kebabkött (nötköt), Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni"
   ];
 
+  // Gyros dishes
   const gyros = [
-    "1. Gyros med bröd special - Gyros (fläskfilé), isbergssallad, tomat, gurka, lök, feferoni, tzatziki",
-    "2. Gyros med pommes - Gyros (fläskfilé), pommes, isbergssallad, tomat, gurka, lök, feferoni, tzatziki",
-    "3. Kebabtallik special med pommes - Kebabkött, pommes, isbergssallad, tomat, gurka, lök, feferoni, mild sås",
-    "4. Kebabrulle special med pommes - Kebabkött, pommes, isbergssallad, tomat, gurka, lök, feferoni, mild sås, tunnbröd",
-    "5. Kebabrulle med potatismos - Kebabkött, potatismos, isbergssallad, tomat, gurka, lök, feferoni, mild sås, tunnbröd",
-    "6. Gyros med bröd - Gyros (fläskfilé), isbergssallad, tomat, gurka, lök, feferoni, tzatziki"
+    "9. Gyros med bröd - 110 SEK - Gyroskött (fläskkarre), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "10. Gyros med bröd special - 120 SEK - Gyroskött (fläskkarre), Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "11. Gyrosrulle - 110 SEK - Gyroskött (fläskkarre), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "12. Gyrosrulle special - 120 SEK - Gyroskött (fläskkarre), Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "13. Gyrostallrik med pommes - 110 SEK - Gyroskött (fläskkarre), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "14. Gyrostallrik special med pommes - 120 SEK - Gyroskött (fläskkarre), Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni"
   ];
 
+  // Chicken dishes
+  const kyckling = [
+    "15. Kyckling med bröd - 110 SEK - Kyckling, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "16. Kyckling med bröd special - 120 SEK - Kyckling, Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "17. Kycklingrulle - 110 SEK - Kyckling, Ost, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "18. Kycklingrulle special - 120 SEK - Kyckling, Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "19. Kycklingtallrik med pommes - 110 SEK - Kyckling, Ost, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "20. Kycklingtallrik special med pommes - 120 SEK - Kyckling, Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "21. Kycklingtallrik med ris - 110 SEK - Kyckling, Ost, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni",
+    "22. Kycklingtallrik special med ris - 120 SEK - Kyckling, Ost, Champinjoner (färska), Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni"
+  ];
+
+  // Pizza Klass 1
   const klass1 = [
-    "1. Margherita - Tomatsås, Ost",
+    "1. Margherita - 120 SEK - Tomatsås, Ost",
     "2. Funghi - Tomatsås, Ost, Champinjoner (färska)",
     "3. Vesuvio - Tomatsås, Ost, Skinka",
     "4. Calzone (inbakad) - Tomatsås, Ost, Skinka",
-    "5. Capricciosa - Tomatsås, Ost, Skinka, Champinjoner (färska)",
-    "6. La gondola - Tomatsås, Ost, Skinka, Räkor",
-    "7. Hawaii - Tomatsås, Ost, Skinka, Ananas",
+    "5. La gondola - Tomatsås, Ost, Skinka, Champinjoner (färska)",
+    "6. Capricciosa - Tomatsås, Ost, Skinka, Räkor",
+    "7. Hawaii special - Tomatsås, Ost, Skinka, Ananas",
     "8. Marinara - Tomatsås, Ost, Räkor, Musslor",
     "9. Pescatore - Tomatsås, Ost, Tonfisk, Lök",
     "10. Bolognese - Tomatsås, Ost, Köttfärssås",
@@ -129,95 +154,106 @@ const MenuPage = () => {
     "12. Vegetariana - Tomatsås, Ost, Champinjoner (färska), Lök, Oliver, Paprika (färsk)"
   ];
 
+  // Pizza Klass 2
   const klass2 = [
-    "13. Mama mia - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska)",
+    "13. Mama mia - 140 SEK - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska)",
     "14. Tropicana - Tomatsås, Ost, Skinka, Ananas, Banan",
-    "15. Gudfadern - Tomatsås, Ost, Tonfisk, Musslor, Paprika (färsk)",
+    "15. Gudadera - Tomatsås, Ost, Tonfisk, Musslor, Paprika (färsk)",
     "16. Bambino (inbakad) - Tomatsås, Ost, Köttfärssås, Ananas",
     "17. Quattro stagioni - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska), Musslor",
     "18. Calzone super (inbakad) - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska)",
     "19. Paradiso - Tomatsås, Ost, Skinka, Räkor, Ananas, Champinjoner (färska)",
-    "20. Maradonna - Tomatsås, Ost, Skinka, Salami, Champinjoner (färska)",
+    "20. Maraddona - Tomatsås, Ost, Skinka, Salami, Champinjoner (färska)",
     "21. Calzone bolognese (inbakad) - Tomatsås, Ost, Köttfärssås, Lök",
     "22. Chapman - Tomatsås, Ost, Salami, Köttfärssås, Bacon",
     "23. Bambino super - Tomatsås, Ost, Köttfärssås, Räkor, Ananas, Lök, Vitlök",
     "24. Rimini - Tomatsås, Ost, Bacon, Lök, Ägg",
     "25. Hawaii special - Tomatsås, Ost, Skinka, Räkor, Ananas",
     "26. Ronaldo - Tomatsås, Ost, Oxfilé, Bearnaisesås",
-    "27. Big Brother - Tomatsås, Ost, Oxfilé, Bearnaisesås, Lök, Tomater (färska), Jalapeños",
-    "28. Roma - Tomatsås, Ost, Skinka, Fetaost, Bearnaisesås, Kebabkött (nötkött)",
-    "29. Ciao ciao - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Tomater (färska), Vitlök",
+    "27. Big Brother - Tomatsås, Ost, Oxfilé, Bearnaisesås, Lök, Tomater (färska), Jalapeño",
+    "28. Roma - Tomatsås, Ost, Skinka, Fetaost, Bearnaisesås, Kebabkött (nötköt)",
+    "29. Ciao Ciao - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Tomater (färska), Vitlök",
     "30. Festpizza - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Bearnaisesås",
     "31. Trossö special - Tomatsås, Ost, Salami, Oxfilé (marinerad), Champinjoner (färska), Lök, Tomater (färska)",
-    "32. Fiskarens pizza - Tomatsås, Ost, Tonfisk, Räkor, Musslor",
-    "33. Gorgonzola - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Tomater (färska), Gorgonzolaost",
+    "32. Fiskarepizza - Tomatsås, Ost, Tonfisk, Räkor, Musslor",
+    "33. Grönsakspizza - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Tomater (färska), Grönsaksbland",
     "34. Mexicana - Tomatsås, Ost, Köttfärs, Bacon, Lök, Paprika (färsk)",
     "35. Lambada - Tomatsås, Ost, Skinka, Oxfilé, Köttfärs, Bacon, Champinjoner (färska), Bearnaisesås",
     "36. Valentino special - Tomatsås, Ost, Oxfilé, Champinjoner (färska), Bearnaisesås, Lök",
     "37. Karlskrona special - Tomatsås, Ost, Bacon, Oxfilé (marinerad), Lök, Paprika (färsk)",
     "38. Hercules - Tomatsås, Ost, Oxfilé, Bearnaisesås, Curry, Banan",
     "39. Kycklingpizza - Tomatsås, Ost, Kyckling, Kebabsås mild, Lök, Tomater (färska), Isbergssallad",
-    "40. Kebabpizza - Tomatsås, Ost, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni, Kebabkött (nötkött)",
-    "41. Venezia - Tomatsås, Ost, Skinka, Kebabsås mild, Köttfärssås (nötkött)",
-    "42. Gyrospizza special - Tomatsås, Ost, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni, Gyroskött (fläskkarré)",
-    "43. Halva-halva - Tomatsås, Ost, Kebabsås mild, Gyroskött (fläskkarré), Kebabkött (nötkött)",
-    "44. Red Devil - Tomatsås, Ost, Skinka, Oxfilé, Bearnaisesås, Jalapeños, Feferoni",
+    "40. Kebabpizza - Tomatsås, Ost, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni, Kebabkött (nötköt)",
+    "41. Venezia - Tomatsås, Ost, Skinka, Kebabsås mild, Kebabkött (nötköt)",
+    "42. Gyrospizza special - Tomatsås, Ost, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni, Gyroskött (fläskkarre)",
+    "43. Halva halva - Tomatsås, Ost, Kebabsås mild, Gyroskött (fläskkarre), Kebabkött (nötköt)",
+    "44. Red Devil - Tomatsås, Ost, Salami, Oxfilé, Bearnaisesås, Jalapeño, Feferoni",
     "45. Bonjour - Tomatsås, Ost, Oxfilé, Champinjoner (färska), Bearnaisesås, Lök, Paprika (färsk)",
     "46. Palermo - Tomatsås, Ost, Skinka, Oxfilé, Champinjoner (färska), Bearnaisesås",
-    "47. Calzone special Inbakad - Tomatsås, Ost, Skinka, Kebabsås mild, Kebabkött (nötkött)",
+    "47. Calzone special (inbakad) - Tomatsås, Ost, Skinka, Kebabsås mild, Kebabkött (nötköt)",
     "48. Bagarens favorit - Tomatsås, Ost, Oxfilé, Champinjoner (färska), Lök, Vitlök",
     "49. Mazziani - Tomatsås, Ost, Oxfilé (marinerad), Tomater (färska), Vitlök",
-    "50. Vikingbåt (Halvinbakad) - Tomatsås, Ost, Champinjoner (färska), Lök, Vitlök, Gyroskött (fläskkarré)",
+    "50. Vikingbåt (Halvinbakad) - Tomatsås, Ost, Champinjoner (färska), Lök, Vitlök, Gyroskött (fläskkarre)",
     "51. Ciao bella (Halvinbakad) - Tomatsås, Ost, Oxfilé, Champinjoner (färska), Lök, Vitlök",
     "52. Indiana - Tomatsås, Ost, Oxfilé (marinerad), Curry, Banan, Tomater (färska)",
     "53. Bahamas - Tomatsås, Ost, Kyckling, Curry, Banan, Jordnötter",
     "54. Black and White - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Bearnaisesås",
     "55. Sopsäck - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska), Vitlök",
-    "56. Mozzarella - Tomatsås, Ost, Pepperonikorv, Champinjoner (färska), Bearnaisesås, Mozzarellaost",
+    "56. Mozzarella - Tomatsås, Ost, Pepperoni, Champinjoner (färsk), Bearnaisesås, Mozzarellaost",
     "57. Fur - Tomatsås, Ost, Champinjoner (färska), Lök, Tomater (färska), Vitlök",
-    "58. Pommespizza - Tomatsås, Ost, Kebabsås mild, Kebabkött (nötkött), Pommes frites",
-    "59. Ostpizza - Tomatsås, Ost, Fetaost, Vitlök, Gorgonzolaost, Mozzarellaost"
+    "58. Pommes - Tomatsås, Ost, Kebabsås mild, Kebabkött (nötköt), Pommes frites",
+    "59. Osttpizza - Tomatsås, Ost, Fetaost, Vitlök, Gorgonzaolost, Mozzarellaost"
   ];
 
+  // Rollopizza
   const rollopizza = [
-    "60. Rollo mardino - Tomatsås, Ost, Oxfilé, Champinjoner",
-    "61. Rollo kurdo - Tomatsås, Ost, Kyckling, Fetaost, Kebabsås mild, Paprika (färsk)",
-    "62. Rollo Chapman - Tomatsås, Ost, Kebabsås mild, Lök, Isbergssallad, Kebabkött (nötkött)",
-    "63. Rollo Alanya - Tomatsås, Ost, Oxfilé, Bacon, Champinjoner",
-    "64. Rollo Oscar - Tomatsås, Ost, Skinka, Räkor, Ananas"
+    "60. Rollo mardino - 160 SEK - Tomatsås, Ost, Oxfilé, Champinjoner (färska), Bearnaisesås, Lök",
+    "61. Rollo kebab - 160 SEK - Tomatsås, Ost, Kebabsås mild, Champinjoner (färska), Kebabkött (nötköt)",
+    "62. Rollo Chapman - 150 SEK - Tomatsås, Ost, Köttfärs, Lök, Tomater (färska), Isbergssallad, Kebabkött (nötköt)",
+    "63. Rollo Alanya - Tomatsås, Ost, Kyckling, Oxfilé, Champinjoner (färska), Lök",
+    "64. Rollo Oscar - Tomatsås, Ost, Skinka, Räkor, Ananas, Champinjoner (färska)"
   ];
 
+  // Indian dishes
   const indianDishes = [
-    "1. Karahi Chicken",
-    "2. Chicken vindaloo",
-    "3. Butter chicken",
-    "4. Mughlai chicken",
-    "5. Cream chicken korma",
-    "6. Masala chicken"
+    "1. Karahi Chicken - 149 SEK",
+    "2. Chicken Kohima - 140 SEK",
+    "3. Butter chicken - 149 SEK",
+    "4. Mughlai chicken - 149 SEK",
+    "5. Cream chicken korma - 149 SEK",
+    "6. Masala chicken - 149 SEK"
+  ];
+
+  const indianSpecials = [
+    "Tomato Chicken - 149 SEK",
+    "Mushroom Chicken - 149 SEK",
+    "Saag Meat - 149 SEK",
+    "Curry Meat - 149 SEK",
+    "Äggcurry - 149 SEK"
   ];
 
   const indianVeg = [
-    "1. Shahi paneer",
-    "2. Kadhai paneer",
-    "3. Palak paneer (spenat med linser)",
-    "4. Dal makhani (linser)",
-    "5. Chana masala (Kikärtor)",
-    "6. Matar paneer (Ärtor)",
-    "7. Aloo Matar (potatis med ärtor)",
-    "8. Rajma Chawal (kidneybönor)"
+    "1. Dall parisienne - 149 SEK",
+    "2. Karahi paneer - 149 SEK",
+    "3. Palak panerspicerat med Paneer) - 149 SEK",
+    "4. Dal makhan(butter) - 149 SEK",
+    "5. Chana masala(Kikärter) - 149 SEK",
+    "6. Masala shahi(Mir) - 149 SEK",
+    "7. Aloo Matar(potatis med Ärter) - 149 SEK",
+    "8. Mixed Veg(blandgrönsaker) - 149 SEK"
   ];
 
   const indianRice = [
-    "1. Chicken biryani",
-    "2. Veg biryani",
-    "3. Plain rice - 40 kr",
-    "4. Jeera rice - 45 kr"
+    "1. Chicken bryani - 149 SEK",
+    "2. Veg bryani - 149 SEK",
+    "3. Plain rice - 40 SEK",
+    "4. Jeera rice - 45 SEK"
   ];
 
   const breads = [
-    "1. Garlic naan - 45 kr",
-    "2. Plain naan - 40 kr",
-    "3. Bhatura - 20 kr"
+    "1. Garlic naan - 45 SEK",
+    "2. Plain roti - 20 SEK",
+    "3. Bhatura - 20 SEK"
   ];
 
   return (
@@ -348,17 +384,14 @@ const MenuPage = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Special Rätter - 159 SEK</h2>
-            <p className="text-gray-600 mb-4">Tomato Chicken, Saag Meat</p>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Indiska Special Ratter - 159 SEK</h2>
             <ul className="space-y-4">
-              <li className="flex justify-between border-b pb-2">
-                <span className="text-gray-800">Tomato Chicken</span>
-                <span className="text-red-700 font-bold">159 kr</span>
-              </li>
-              <li className="flex justify-between border-b pb-2">
-                <span className="text-gray-800">Saag Meat (Special rätter)</span>
-                <span className="text-red-700 font-bold">159 kr</span>
-              </li>
+              {indianSpecials.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">159 kr</span>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -435,9 +468,9 @@ const MenuPage = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6 mt-12">Fågelfilé - 120 SEK</h2>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6 mt-12">Falafel - 120 SEK</h2>
             <ul className="space-y-4">
-              {fageFile.map((item, index) => (
+              {falafel.map((item, index) => (
                 <li key={index} className="flex justify-between border-b pb-2">
                   <span className="text-gray-800">{item}</span>
                   <span className="text-red-700 font-bold">120 kr</span>
@@ -459,9 +492,9 @@ const MenuPage = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6 mt-12">Tallrik - 120 SEK</h2>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6 mt-12">Kebabrater - 120 SEK</h2>
             <ul className="space-y-4">
-              {talrik.map((item, index) => (
+              {kebabTallrik.map((item, index) => (
                 <li key={index} className="flex justify-between border-b pb-2">
                   <span className="text-gray-800">{item}</span>
                   <span className="text-red-700 font-bold">120 kr</span>
@@ -482,6 +515,18 @@ const MenuPage = () => {
             </ul>
           </div>
 
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6 mt-12">Kyckling - 120 SEK</h2>
+            <ul className="space-y-4">
+              {kyckling.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">120 kr</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Restaurant information */}
           <div className="mt-16 p-6 bg-gray-50 rounded-lg border border-gray-200">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
@@ -491,7 +536,7 @@ const MenuPage = () => {
                   371 14 Karlskrona
                 </p>
                 <a href="tel:045561301" className="text-blue-600 hover:text-blue-800 block mt-2 font-semibold">
-                  Tel: +46 123-456789
+                  Tel: +46 455-200 73
                 </a>
               </div>
               <div>
@@ -547,7 +592,7 @@ const MenuPage = () => {
             </div>
             <div>
               <h4 className="text-xl font-bold text-white font-pizza mb-4">Contact</h4>
-              <p className="text-gray-400">Norra Smedjegatan 31<br />371 14 Karlskrona<br />+46 123-456789</p>
+              <p className="text-gray-400">Norra Smedjegatan 31<br />371 14 Karlskrona<br />+46 455-200 73</p>
               <p className="text-gray-400 mt-2">Email: info@chapmanpizzeria.se</p>
             </div>
           </div>

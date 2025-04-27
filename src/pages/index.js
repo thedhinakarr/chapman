@@ -127,7 +127,7 @@ const IndexPage = () => {
     {
       image: getImage(data.pizzaPepperoni),
       name: "Indiana",
-      description: "Tomatsås, Ost, Oxfile, Lök, Koriander",
+      description: "Tomatsås, Ost, Oxfile, Curry, Banan, Tomater",
       price: "149 kr"
     },
     {
@@ -464,7 +464,7 @@ const IndexPage = () => {
             </div>
             <div>
               <h4 className="text-xl font-bold text-white font-pizza mb-4">Contact</h4>
-              <p className="text-gray-400">Norra Smedjegatan 31<br />371 14 Karlskrona<br />+46 123-456789</p>
+              <p className="text-gray-400">Norra Smedjegatan 31<br />371 14 Karlskrona<br />+46 455-200 73 </p>
               <p className="text-gray-400 mt-2">Email: info@chapmanpizzeria.se</p>
             </div>
           </div>
