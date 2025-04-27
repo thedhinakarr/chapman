@@ -126,8 +126,8 @@ const IndexPage = () => {
     },
     {
       image: getImage(data.pizzaPepperoni),
-      name: "Chicken Tikka Pizza",
-      description: "Tomatsås, Ost, Tikka Kryddad Kyckling, Lök, Koriander",
+      name: "Indiana",
+      description: "Tomatsås, Ost, Oxfile, Lök, Koriander",
       price: "149 kr"
     },
     {

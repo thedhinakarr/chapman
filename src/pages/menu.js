@@ -65,51 +65,159 @@ const MenuPage = () => {
   const logoImage = getImage(data.logo);
   const menuBgImage = getImage(data.menuBg);
 
+  // Pancakes & Main Dishes from new menu
+  const langos = [
+    "1. Langos med ost - Tomat, lök, gurka, isbergssallad, feferoni",
+    "2. Langos med grygrisk - Tomat, lök, gurka, isbergssallad, feferoni",
+    "3. Langos med kyckling - Tomat, lök, gurka, isbergssallad, feferoni",
+    "4. Langos med kebabkött - Tomat, lök, gurka, isbergssallad, feferoni",
+    "5. Langos med räkor - Tomat, lök, gurka, isbergssallad, feferoni"
+  ];
+
+  const sallader = [
+    "1. Kebabsallad - Kebabkött, tomat, gurka, lök, ost, fetaost, mild sås, oliver",
+    "2. Kycklingsallad - Kyckling, tomat, gurka, lök, ost, fetaost, mild sås, oliver",
+    "3. Räkasallad - Räkor, tomat, gurka, lök, ost, fetaost, mild sås, oliver",
+    "4. Tonfisksallad - Tonfisk, tomat, gurka, lök, ost, fetaost, mild sås, oliver",
+    "5. Skinksallad - Skinka, tomat, gurka, lök, ost, fetaost, mild sås, oliver"
+  ];
+
+  const fageFile = [
+    "1. Fågelfilégrillad special - Kyckling, pommes, isbergssallad, tomat, gurka, lök, ost",
+    "2. Fågelfilégrillad med pommes - Kyckling, pommes, isbergssallad, tomat, gurka, lök",
+    "3. Fågelfilégrillad med potatisgratäng - Kyckling, potatisgratäng, isbergssallad, tomat, gurka, lök"
+  ];
+
+  const hamburgare = [
+    "1. Hamburgertallrik 90g - Bröd, hamburgare, dressing, isbergssallad, tomat, gurka, lök, pommes",
+    "2. Hamburgertallrik 150g - Bröd, hamburgare, dressing, isbergssallad, tomat, gurka, lök, pommes",
+    "3. Hamburgare 90g - Bröd, hamburgare, dressing, isbergssallad, tomat, gurka, lök",
+    "4. Hamburgare 150g - Bröd, hamburgare, dressing, isbergssallad, tomat, gurka, lök"
+  ];
+
+  const talrik = [
+    "1. Fågelfilétallrik med pommes - Kyckling, pommes, isbergssallad, tomat, gurka, lök",
+    "2. Fågelfilétallrik med klyftpotatis - Kyckling, klyftpotatis, isbergssallad, tomat, gurka, lök",
+    "3. Fågelfilétallrik med ris - Kyckling, ris, isbergssallad, tomat, gurka, lök",
+    "4. Fågelfilétallrik med special - Kyckling, pommes, isbergssallad, tomat, gurka, lök, ost, bea/kebabsås",
+    "5. Kebabtallik med pommes - Kebabkött, pommes, isbergssallad, tomat, gurka, lök, feferoni, mild sås",
+    "6. Kebabtallik med ris - Kebabkött, ris, isbergssallad, tomat, gurka, lök, feferoni, mild sås",
+    "7. Gyrostallrik - Gyros (fläskfilé), pommes, isbergssallad, tomat, gurka, lök, feferoni, tzatziki"
+  ];
+
+  const gyros = [
+    "1. Gyros med bröd special - Gyros (fläskfilé), isbergssallad, tomat, gurka, lök, feferoni, tzatziki",
+    "2. Gyros med pommes - Gyros (fläskfilé), pommes, isbergssallad, tomat, gurka, lök, feferoni, tzatziki",
+    "3. Kebabtallik special med pommes - Kebabkött, pommes, isbergssallad, tomat, gurka, lök, feferoni, mild sås",
+    "4. Kebabrulle special med pommes - Kebabkött, pommes, isbergssallad, tomat, gurka, lök, feferoni, mild sås, tunnbröd",
+    "5. Kebabrulle med potatismos - Kebabkött, potatismos, isbergssallad, tomat, gurka, lök, feferoni, mild sås, tunnbröd",
+    "6. Gyros med bröd - Gyros (fläskfilé), isbergssallad, tomat, gurka, lök, feferoni, tzatziki"
+  ];
+
   const klass1 = [
-    "Margherita - Tomatsås, Ost",
-    "Funghi - Tomatsås, Ost, Champinjoner (färska)",
-    "Vesuvio - Tomatsås, Ost, Skinka",
-    "Calzone (inbakad) - Tomatsås, Ost, Skinka",
-    "Capricciosa - Tomatsås, Ost, Skinka, Champinjoner (färska)",
-    "La gondola - Tomatsås, Ost, Skinka, Räkor",
-    "Hawaii - Tomatsås, Ost, Skinka, Ananas",
-    "Marinara - Tomatsås, Ost, Räkor, Musslor",
-    "Pescatore - Tomatsås, Ost, Tonfisk, Lök",
-    "Bolognese - Tomatsås, Ost, Köttfärssås",
-    "La mafia - Tomatsås, Ost, Bacon, Lök, Paprika (färsk)",
-    "Vegetariana - Tomatsås, Ost, Champinjoner (färska), Lök, Oliver, Paprika (färsk)"
+    "1. Margherita - Tomatsås, Ost",
+    "2. Funghi - Tomatsås, Ost, Champinjoner (färska)",
+    "3. Vesuvio - Tomatsås, Ost, Skinka",
+    "4. Calzone (inbakad) - Tomatsås, Ost, Skinka",
+    "5. Capricciosa - Tomatsås, Ost, Skinka, Champinjoner (färska)",
+    "6. La gondola - Tomatsås, Ost, Skinka, Räkor",
+    "7. Hawaii - Tomatsås, Ost, Skinka, Ananas",
+    "8. Marinara - Tomatsås, Ost, Räkor, Musslor",
+    "9. Pescatore - Tomatsås, Ost, Tonfisk, Lök",
+    "10. Bolognese - Tomatsås, Ost, Köttfärssås",
+    "11. La mafia - Tomatsås, Ost, Bacon, Lök, Paprika (färsk)",
+    "12. Vegetariana - Tomatsås, Ost, Champinjoner (färska), Lök, Oliver, Paprika (färsk)"
   ];
 
   const klass2 = [
-    "Mama mia - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska)",
-    "Tropicana - Tomatsås, Ost, Skinka, Ananas, Banan",
-    "Gudfadern - Tomatsås, Ost, Tonfisk, Musslor, Paprika (färsk)",
-    "Bambino (inbakad) - Tomatsås, Ost, Köttfärssås, Ananas",
-    "Quattro stagioni - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska), Musslor",
-    "Calzone super (inbakad) - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska)",
-    "Paradiso - Tomatsås, Ost, Skinka, Räkor, Ananas, Champinjoner (färska)",
-    "Maradonna - Tomatsås, Ost, Skinka, Salami, Champinjoner (färska)",
-    "Calzone bolognese (inbakad) - Tomatsås, Ost, Köttfärssås, Lök",
-    "Chapman - Tomatsås, Ost, Salami, Köttfärssås, Bacon",
-    "Bambino super - Tomatsås, Ost, Köttfärssås, Räkor, Ananas, Lök, Vitlök",
-    "Rimini - Tomatsås, Ost, Bacon, Lök, Ägg",
-    "Hawaii special - Tomatsås, Ost, Skinka, Räkor, Ananas",
-    "Ronaldo - Tomatsås, Ost, Oxfilé, Bearnaisesås",
-    "Big Brother - Tomatsås, Ost, Oxfilé, Bearnaisesås, Lök, Tomater (färska), Jalapeños",
-    "Roma - Tomatsås, Ost, Skinka, Fetaost, Bearnaisesås, Kebabkött (nötkött)",
-    "Ciao ciao - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Tomater (färska), Vitlök",
-    "Festpizza - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Bearnaisesås",
-    "Trossö special - Tomatsås, Ost, Salami, Oxfilé (marinerad), Champinjoner (färska), Lök, Tomater (färska)",
-    "Fiskarens pizza - Tomatsås, Ost, Tonfisk, Räkor, Musslor",
-    "Gorgonzola - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Tomater (färska), Gorgonzolaost",
-    "Mexicana - Tomatsås, Ost, Köttfärs, Bacon, Lök, Paprika (färsk)",
-    "Lambada - Tomatsås, Ost, Skinka, Oxfilé, Köttfärs, Bacon, Champinjoner (färska), Bearnaisesås",
-    "Valentino special - Tomatsås, Ost, Oxfilé, Champinjoner (färska), Bearnaisesås, Lök",
-    "Karlskrona special - Tomatsås, Ost, Bacon, Oxfilé (marinerad), Lök, Paprika (färsk)",
-    "Hercules - Tomatsås, Ost, Oxfilé, Bearnaisesås, Curry, Banan",
-    "Kycklingpizza - Tomatsås, Ost, Kyckling, Kebabsås mild, Lök, Tomater (färska), Isbergssallad",
-    "Kebabpizza - Tomatsås, Ost, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Peperoni, Kebabkött (nötkött)",
-    "Venezia - Tomatsås, Ost, Skinka, Kebabsås mild, Kebabkött (nötkött)"
+    "13. Mama mia - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska)",
+    "14. Tropicana - Tomatsås, Ost, Skinka, Ananas, Banan",
+    "15. Gudfadern - Tomatsås, Ost, Tonfisk, Musslor, Paprika (färsk)",
+    "16. Bambino (inbakad) - Tomatsås, Ost, Köttfärssås, Ananas",
+    "17. Quattro stagioni - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska), Musslor",
+    "18. Calzone super (inbakad) - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska)",
+    "19. Paradiso - Tomatsås, Ost, Skinka, Räkor, Ananas, Champinjoner (färska)",
+    "20. Maradonna - Tomatsås, Ost, Skinka, Salami, Champinjoner (färska)",
+    "21. Calzone bolognese (inbakad) - Tomatsås, Ost, Köttfärssås, Lök",
+    "22. Chapman - Tomatsås, Ost, Salami, Köttfärssås, Bacon",
+    "23. Bambino super - Tomatsås, Ost, Köttfärssås, Räkor, Ananas, Lök, Vitlök",
+    "24. Rimini - Tomatsås, Ost, Bacon, Lök, Ägg",
+    "25. Hawaii special - Tomatsås, Ost, Skinka, Räkor, Ananas",
+    "26. Ronaldo - Tomatsås, Ost, Oxfilé, Bearnaisesås",
+    "27. Big Brother - Tomatsås, Ost, Oxfilé, Bearnaisesås, Lök, Tomater (färska), Jalapeños",
+    "28. Roma - Tomatsås, Ost, Skinka, Fetaost, Bearnaisesås, Kebabkött (nötkött)",
+    "29. Ciao ciao - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Tomater (färska), Vitlök",
+    "30. Festpizza - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Bearnaisesås",
+    "31. Trossö special - Tomatsås, Ost, Salami, Oxfilé (marinerad), Champinjoner (färska), Lök, Tomater (färska)",
+    "32. Fiskarens pizza - Tomatsås, Ost, Tonfisk, Räkor, Musslor",
+    "33. Gorgonzola - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Tomater (färska), Gorgonzolaost",
+    "34. Mexicana - Tomatsås, Ost, Köttfärs, Bacon, Lök, Paprika (färsk)",
+    "35. Lambada - Tomatsås, Ost, Skinka, Oxfilé, Köttfärs, Bacon, Champinjoner (färska), Bearnaisesås",
+    "36. Valentino special - Tomatsås, Ost, Oxfilé, Champinjoner (färska), Bearnaisesås, Lök",
+    "37. Karlskrona special - Tomatsås, Ost, Bacon, Oxfilé (marinerad), Lök, Paprika (färsk)",
+    "38. Hercules - Tomatsås, Ost, Oxfilé, Bearnaisesås, Curry, Banan",
+    "39. Kycklingpizza - Tomatsås, Ost, Kyckling, Kebabsås mild, Lök, Tomater (färska), Isbergssallad",
+    "40. Kebabpizza - Tomatsås, Ost, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni, Kebabkött (nötkött)",
+    "41. Venezia - Tomatsås, Ost, Skinka, Kebabsås mild, Köttfärssås (nötkött)",
+    "42. Gyrospizza special - Tomatsås, Ost, Kebabsås mild, Lök, Tomater (färska), Isbergssallad, Feferoni, Gyroskött (fläskkarré)",
+    "43. Halva-halva - Tomatsås, Ost, Kebabsås mild, Gyroskött (fläskkarré), Kebabkött (nötkött)",
+    "44. Red Devil - Tomatsås, Ost, Skinka, Oxfilé, Bearnaisesås, Jalapeños, Feferoni",
+    "45. Bonjour - Tomatsås, Ost, Oxfilé, Champinjoner (färska), Bearnaisesås, Lök, Paprika (färsk)",
+    "46. Palermo - Tomatsås, Ost, Skinka, Oxfilé, Champinjoner (färska), Bearnaisesås",
+    "47. Calzone special Inbakad - Tomatsås, Ost, Skinka, Kebabsås mild, Kebabkött (nötkött)",
+    "48. Bagarens favorit - Tomatsås, Ost, Oxfilé, Champinjoner (färska), Lök, Vitlök",
+    "49. Mazziani - Tomatsås, Ost, Oxfilé (marinerad), Tomater (färska), Vitlök",
+    "50. Vikingbåt (Halvinbakad) - Tomatsås, Ost, Champinjoner (färska), Lök, Vitlök, Gyroskött (fläskkarré)",
+    "51. Ciao bella (Halvinbakad) - Tomatsås, Ost, Oxfilé, Champinjoner (färska), Lök, Vitlök",
+    "52. Indiana - Tomatsås, Ost, Oxfilé (marinerad), Curry, Banan, Tomater (färska)",
+    "53. Bahamas - Tomatsås, Ost, Kyckling, Curry, Banan, Jordnötter",
+    "54. Black and White - Tomatsås, Ost, Oxfilé (marinerad), Champinjoner (färska), Bearnaisesås",
+    "55. Sopsäck - Tomatsås, Ost, Skinka, Räkor, Champinjoner (färska), Vitlök",
+    "56. Mozzarella - Tomatsås, Ost, Pepperonikorv, Champinjoner (färska), Bearnaisesås, Mozzarellaost",
+    "57. Fur - Tomatsås, Ost, Champinjoner (färska), Lök, Tomater (färska), Vitlök",
+    "58. Pommespizza - Tomatsås, Ost, Kebabsås mild, Kebabkött (nötkött), Pommes frites",
+    "59. Ostpizza - Tomatsås, Ost, Fetaost, Vitlök, Gorgonzolaost, Mozzarellaost"
+  ];
+
+  const rollopizza = [
+    "60. Rollo mardino - Tomatsås, Ost, Oxfilé, Champinjoner",
+    "61. Rollo kurdo - Tomatsås, Ost, Kyckling, Fetaost, Kebabsås mild, Paprika (färsk)",
+    "62. Rollo Chapman - Tomatsås, Ost, Kebabsås mild, Lök, Isbergssallad, Kebabkött (nötkött)",
+    "63. Rollo Alanya - Tomatsås, Ost, Oxfilé, Bacon, Champinjoner",
+    "64. Rollo Oscar - Tomatsås, Ost, Skinka, Räkor, Ananas"
+  ];
+
+  const indianDishes = [
+    "1. Karahi Chicken",
+    "2. Chicken vindaloo",
+    "3. Butter chicken",
+    "4. Mughlai chicken",
+    "5. Cream chicken korma",
+    "6. Masala chicken"
+  ];
+
+  const indianVeg = [
+    "1. Shahi paneer",
+    "2. Kadhai paneer",
+    "3. Palak paneer (spenat med linser)",
+    "4. Dal makhani (linser)",
+    "5. Chana masala (Kikärtor)",
+    "6. Matar paneer (Ärtor)",
+    "7. Aloo Matar (potatis med ärtor)",
+    "8. Rajma Chawal (kidneybönor)"
+  ];
+
+  const indianRice = [
+    "1. Chicken biryani",
+    "2. Veg biryani",
+    "3. Plain rice - 40 kr",
+    "4. Jeera rice - 45 kr"
+  ];
+
+  const breads = [
+    "1. Garlic naan - 45 kr",
+    "2. Plain naan - 40 kr",
+    "3. Bhatura - 20 kr"
   ];
 
   return (
@@ -191,6 +299,7 @@ const MenuPage = () => {
         <div className="max-w-5xl mx-auto px-4 space-y-16">
           <div>
             <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Klass 1 - 120 SEK</h2>
+            <p className="text-gray-600 mb-4">Familie Pizza: 230 SEK</p>
             <ul className="space-y-4">
               {klass1.map((item, index) => (
                 <li key={index} className="flex justify-between border-b pb-2">
@@ -202,15 +311,194 @@ const MenuPage = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Klass 2 - 149 SEK</h2>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Klass 2 - 140 SEK</h2>
+            <p className="text-gray-600 mb-4">Familie Pizza: 270 SEK</p>
             <ul className="space-y-4">
               {klass2.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">140 kr</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Rollopizza - 159 SEK</h2>
+            <ul className="space-y-4">
+              {rollopizza.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">159 kr</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Indiska Kycklingrätter - 149 SEK</h2>
+            <ul className="space-y-4">
+              {indianDishes.map((item, index) => (
                 <li key={index} className="flex justify-between border-b pb-2">
                   <span className="text-gray-800">{item}</span>
                   <span className="text-red-700 font-bold">149 kr</span>
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Special Rätter - 159 SEK</h2>
+            <p className="text-gray-600 mb-4">Tomato Chicken, Saag Meat</p>
+            <ul className="space-y-4">
+              <li className="flex justify-between border-b pb-2">
+                <span className="text-gray-800">Tomato Chicken</span>
+                <span className="text-red-700 font-bold">159 kr</span>
+              </li>
+              <li className="flex justify-between border-b pb-2">
+                <span className="text-gray-800">Saag Meat (Special rätter)</span>
+                <span className="text-red-700 font-bold">159 kr</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Indiska Vegårätter - 120 SEK</h2>
+            <ul className="space-y-4">
+              {indianVeg.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">120 kr</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Indiska Risrätter</h2>
+            <ul className="space-y-4">
+              {indianRice.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">
+                    {item.includes("Plain rice") ? "40 kr" :
+                      item.includes("Jeera rice") ? "45 kr" : "149 kr"}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Bread/Roti</h2>
+            <ul className="space-y-4">
+              {breads.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">
+                    {item.includes("Garlic naan") ? "45 kr" :
+                      item.includes("Plain naan") ? "40 kr" : "20 kr"}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-4">
+            <h3 className="text-xl font-bold text-red-700 font-pizza mb-2">Glutenfria Pizzor</h3>
+            <p className="text-gray-800">Alla pizzor kan fås som glutenfria mot ett pristillägg på +30 SEK</p>
+          </div>
+
+          {/* New menu sections from the additional image */}
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6 mt-12">Langos - 130 SEK</h2>
+            <ul className="space-y-4">
+              {langos.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">130 kr</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6 mt-12">Sallader - 120 SEK</h2>
+            <ul className="space-y-4">
+              {sallader.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">120 kr</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6 mt-12">Fågelfilé - 120 SEK</h2>
+            <ul className="space-y-4">
+              {fageFile.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">120 kr</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6 mt-12">Hamburgare - 120 SEK</h2>
+            <ul className="space-y-4">
+              {hamburgare.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">120 kr</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6 mt-12">Tallrik - 120 SEK</h2>
+            <ul className="space-y-4">
+              {talrik.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">120 kr</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6 mt-12">Gyros - 120 SEK</h2>
+            <ul className="space-y-4">
+              {gyros.map((item, index) => (
+                <li key={index} className="flex justify-between border-b pb-2">
+                  <span className="text-gray-800">{item}</span>
+                  <span className="text-red-700 font-bold">120 kr</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Restaurant information */}
+          <div className="mt-16 p-6 bg-gray-50 rounded-lg border border-gray-200">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <div>
+                <h3 className="text-2xl font-bold text-red-700 font-pizza mb-2">Chapman Pizzeriza</h3>
+                <p className="text-gray-700">Norra Smedjegatan 31
+                  371 14 Karlskrona
+                </p>
+                <a href="tel:045561301" className="text-blue-600 hover:text-blue-800 block mt-2 font-semibold">
+                  Tel: +46 123-456789
+                </a>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-red-700 font-pizza mb-2">Chapman Pizzeriza </h3>
+                <p className="text-gray-700 italic">New York style pizza with authentic Indian flavors</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -242,8 +530,7 @@ const MenuPage = () => {
                 <a href="#" className="text-gray-400 hover:text-red-500 no-underline">
                   <span className="sr-only">Instagram</span>
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.
-                    0.08c0 2.716-.012 3.056-.06 4.123-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06s-3.056-.012-4.123-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427C2.013 15.371 2 15.031 2 12.315s.013-3.056.06-4.123c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.943 2.013 9.283 2 12 2zm0 1.8c-2.683 0-3.002.01-4.06.058-.978.045-1.508.205-1.861.341a3.1 3.1 0 00-1.129.732 3.1 3.1 0 00-.732 1.13c-.136.352-.296.882-.341 1.86C4.01 8.998 4 9.317 4 12s.01 3.002.058 4.06c.045.978.205 1.508.341 1.861.174.45.43.851.732 1.13.28.303.68.558 1.13.732.352.136.882.296 1.86.341C8.998 19.99 9.317 20 12 20s3.002-.01 4.06-.058c.978-.045 1.508-.205 1.861-.341a3.1 3.1 0 001.13-.732 3.1 3.1 0 00.732-1.13c.136-.352.296-.882.341-1.86.048-1.058.058-1.377.058-4.06s-.01-3.002-.058-4.06c-.045-.978-.205-1.508-.341-1.861a3.1 3.1 0 00-.732-1.13 3.1 3.1 0 00-1.13-.732c-.352-.136-.882-.296-1.86-.341C15.002 3.81 14.683 3.8 12 3.8zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.8a3.2 3.2 0 100 6.4 3.2 3.2 0 000-6.4zm4.5-2.2a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
                   </svg>
                 </a>
               </div>
@@ -253,6 +540,7 @@ const MenuPage = () => {
               <ul className="space-y-2">
                 <li><Link to="/" className="text-gray-400 hover:text-white no-underline">Home</Link></li>
                 <li><Link to="/#about" className="text-gray-400 hover:text-white no-underline">About</Link></li>
+                <li><Link to="/menu" className="text-gray-400 hover:text-white no-underline">Menu</Link></li>
                 <li><Link to="/#location" className="text-gray-400 hover:text-white no-underline">Location</Link></li>
                 <li><Link to="/#contact" className="text-gray-400 hover:text-white no-underline">Contact</Link></li>
               </ul>
