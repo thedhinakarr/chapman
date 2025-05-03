@@ -372,12 +372,12 @@ const MenuPage = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Indiska Kycklingrätter - 149 SEK</h2>
+            <h2 className="text-3xl font-bold text-red-700 font-pizza border-b-4 border-red-700 inline-block mb-6">Indiska Kycklingrätter - 120 SEK</h2>
             <ul className="space-y-4">
               {indianDishes.map((item, index) => (
                 <li key={index} className="flex justify-between border-b pb-2">
                   <span className="text-gray-800">{item}</span>
-                  <span className="text-red-700 font-bold">149 kr</span>
+                  <span className="text-red-700 font-bold">120 kr</span>
                 </li>
               ))}
             </ul>
