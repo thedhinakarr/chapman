@@ -364,8 +364,7 @@ const IndexPage = () => {
                     </svg>
                     <div className="ml-3">
                       <p className="text-lg text-gray-900">Monday - Thursday: 11:00 - 21:00</p>
-                      <p className="text-lg text-gray-900">Friday - Saturday: 11:00 - 22:00</p>
-                      <p className="text-lg text-gray-900">Sunday: 12:00 - 21:00</p>
+                      <p className="text-lg text-gray-900">Friday - Saturday: 12:00 - 21:00</p>
                     </div>
                   </div>
                   <div className="flex items-start">

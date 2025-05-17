@@ -67,11 +67,11 @@ const MenuPage = () => {
 
   // Langos
   const langos = [
-    "1. Langos med kebab - Kebabkött (nötköt), Ost, Gräddfil, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
-    "2. Langos med gyroskött - Gyroskött (fläskkarre), Ost, Gräddfil, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
-    "3. Langos med kyckling - Kyckling, Ost, Gräddfil, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
-    "4. Langos med tonfisk - Tonfisk, Ost, Gräddfil, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
-    "5. Langos med räkor - Räkor, Ost, Gräddfil, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni"
+    "1. Langos med kebab - Kebabkött (nötköt), Ost, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
+    "2. Langos med gyroskött - Gyroskött (fläskkarre), Ost, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
+    "3. Langos med kyckling - Kyckling, Ost, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
+    "4. Langos med tonfisk - Tonfisk, Ost, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni",
+    "5. Langos med räkor - Räkor, Ost, Lök, Oliver, Tomater (färska), Isbergssallad, Feferoni"
   ];
 
   // Sallads
@@ -216,11 +216,11 @@ const MenuPage = () => {
 
   // Indian dishes
   const indianDishes = [
-    "1. Karahi Chicken",
-    "2. Chicken Kohima",
+    "1. Kadai Chicken",
+    "2. Chicken Korma",
     "3. Butter chicken",
     "4. Mughlai chicken",
-    "5. Cream chicken korma",
+    "5. Vindaloo Chicken",
     "6. Masala chicken"
   ];
 
@@ -228,24 +228,22 @@ const MenuPage = () => {
     "Tomato Chicken",
     "Mushroom Chicken",
     "Saag Meat",
-    "Curry Meat",
     "Äggcurry"
   ];
 
   const indianVeg = [
-    "1. Dall parisienne",
-    "2. Karahi paneer",
-    "3. Palak panerspicerat med Paneer",
-    "4. Dal makhan(butter)",
-    "5. Chana masala(Kikärter)",
-    "6. Masala shahi(Mir)",
-    "7. Aloo Matar(potatis med Ärter)",
-    "8. Mixed Veg(blandgrönsaker)"
+    "1. Kadai paneer",
+    "2. Palak paneer(Spenat)",
+    "3. Dal makhani(butter)",
+    "4. Chana masala(Kikärter)",
+    "5. Aloo Matar(potatis med Ärter)",
+    "6. Shahi Paneer",
+    "7. Matar Mushroom"
   ];
 
   const indianRice = [
-    "1. Chicken bryani",
-    "2. Veg bryani",
+    "1. Chicken biryani",
+    "2. Veg biryani",
     "3. Plain rice",
     "4. Jeera rice"
   ];
